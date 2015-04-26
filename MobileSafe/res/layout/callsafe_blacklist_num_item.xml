@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_callsafe_blacklist_num_and_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="5dip"
+        android:text="姓名(12345678910)"
+        android:textColor="#000000"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_callsafe_blacklist_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_callsafe_blacklist_num_and_name"
+        android:layout_below="@+id/tv_callsafe_blacklist_num_and_name"
+        android:layout_marginBottom="5dip"
+        android:layout_marginTop="1dip"
+        android:text="拦截电话和短信"
+        android:textColor="#99000000" />
+
+    <ImageView
+        android:id="@+id/iv_blacklist_delete"
+        android:layout_width="35dip"
+        android:layout_height="35dip"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="8dip"
+        android:clickable="true"
+        android:src="@drawable/action_discard" />
+
+    <View
+        android:layout_width="1dip"
+        android:layout_height="40dip"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="8dp"
+        android:layout_toLeftOf="@+id/iv_blacklist_delete"
+        android:background="#33000000" />
+
+</RelativeLayout>

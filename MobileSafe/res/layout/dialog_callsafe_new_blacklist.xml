@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="#66ff6600"
+        android:gravity="center"
+        android:text="黑名单"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/et_dialog_num"
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:layout_marginBottom="8dip"
+        android:layout_marginLeft="12dip"
+        android:layout_marginRight="12dip"
+        android:layout_marginTop="12dip"
+        android:hint="请输入号码"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/et_dialog_name"
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="12dip"
+        android:layout_marginRight="12dip"
+        android:hint="请输入姓名（可选）"
+        android:inputType="text" />
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:layout_marginLeft="12dip"
+        android:layout_marginRight="12dip"
+        android:layout_marginBottom="12dip"
+        android:orientation="horizontal">
+        
+        <CheckBox 
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="拦截短信"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:id="@+id/cb_intercept_sms"/>
+        <CheckBox 
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="拦截来电"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:id="@+id/cb_intercept_call"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_dialog_ok"
+            android:layout_width="0dp"
+            android:layout_height="50dip"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:text="确认"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <Button
+            android:id="@+id/btn_dialog_cancel"
+            android:layout_width="0dp"
+            android:layout_height="50dip"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:text="取消" />
+    </LinearLayout>
+
+</LinearLayout>

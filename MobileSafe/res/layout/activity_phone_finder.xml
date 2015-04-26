@@ -1,0 +1,110 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context="com.light.mobilesafe.PhoneFinderActivity" >
+
+    <TextView
+        style="@style/tv_act_title"
+        android:background="#ffbb33"
+        android:text="手机防盗" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="安全号码:"
+            android:textColor="#000000"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tv_phonefinder_safe_num"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="12345678900"
+            android:textColor="#cc000000"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="3dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="防盗服务开启状态:"
+            android:textColor="#000000"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/iv_phone_finder_configed"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/unlock" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="8dip"
+        android:background="@drawable/button"
+        android:onClick="reConfig"
+        android:text="点击重新进入设置向导"
+        android:textColor="#000000"
+        android:textSize="22sp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip"
+        android:background="#66000000"
+        android:text="功能指令"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="280dip"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:layout_marginTop="8dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_weight="1"
+            style="@style/tv_phone_finder_desc"
+            android:text="播放报警音乐:\n#*alarm*#" />
+
+        <TextView
+            android:layout_weight="1"
+            style="@style/tv_phone_finder_desc"
+            android:text="GPS追踪:\n#*location*#" />
+
+        <TextView
+            android:layout_weight="1"
+            style="@style/tv_phone_finder_desc"
+            android:text="远程锁屏:\n#*lockscreen*#%密码" />
+
+        <TextView
+            android:layout_weight="1"
+            style="@style/tv_phone_finder_desc"
+            android:text="远程销毁数据:\n#*wipedata*#" />
+    </LinearLayout>
+
+</LinearLayout>

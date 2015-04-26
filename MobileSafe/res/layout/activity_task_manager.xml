@@ -1,0 +1,97 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/tv_act_title"
+        android:background="#8bc34a"
+        android:text="进程管理" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="3dip" >
+
+        <TextView
+            android:id="@+id/tv_task_manager_thread"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="当前进程数：00"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_task_mem_avail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="可用/总内存:0/00MB"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="9" >
+
+        <ListView
+            android:id="@+id/lv_task_manager_info"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="3dip"
+            android:fastScrollEnabled="true"
+            android:overScrollMode="never" >
+        </ListView>
+
+        <TextView
+            android:id="@+id/tv_task_manager_lv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dip"
+            android:textColor="#ffffffff"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_task_manager_select"
+            android:layout_width="0dip"
+            android:layout_height="48dip"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:text="全选" />
+
+        <Button
+            android:layout_marginLeft="1dip"
+            android:id="@+id/btn_task_manager_clean"
+            android:layout_width="0dip"
+            android:layout_height="48dip"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:text="一键清理" />
+
+        <Button
+            android:id="@+id/btn_task_manager_setting"
+            android:layout_width="0dip"
+            android:layout_height="48dip"
+            android:layout_marginLeft="1dip"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:text="设置" />
+
+    </LinearLayout>
+
+</LinearLayout>

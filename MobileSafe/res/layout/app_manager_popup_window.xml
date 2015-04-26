@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="140dip"
+    android:layout_height="40dip"
+    android:background="@drawable/app_manager_popup"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/popup_start"
+        android:layout_width="32dip"
+        android:layout_height="32dip"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dip"
+        android:background="@drawable/popup_button_start" />
+
+    <Button
+        android:id="@+id/popup_uninstall"
+        android:layout_width="32dip"
+        android:layout_height="32dip"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dip"
+        android:background="@drawable/popup_button_uninstall" />
+
+    <Button
+        android:id="@+id/popup_share"
+        android:layout_width="32dip"
+        android:layout_height="32dip"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="10dip"
+        android:background="@drawable/popup_button_share" />
+
+</LinearLayout>

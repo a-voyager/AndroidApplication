@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.light.mobilesafe.AtoolsActivity" >
+
+    <TextView
+        style="@style/tv_act_title"
+        android:background="#ff4081"
+        android:text="高级工具" />
+
+    <Button
+        android:id="@+id/btn_atools_position_query"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/button"
+        android:text="归属地查询"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_atools_sms_backup"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/button"
+        android:text="备份短信"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_atools_sms_recovery"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/button"
+        android:text="还原短信"
+        android:textSize="18sp" />
+
+</LinearLayout>

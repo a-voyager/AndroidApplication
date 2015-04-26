@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:light="http://schemas.android.com/apk/res/com.light.mobilesafe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context="com.light.mobilesafe.SettingActivity" >
+
+    <com.light.mobilesafe.ui.SettingItem
+        android:id="@+id/si_setting_autoUpdate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        light:content_checked="自动检查更新已开启"
+        light:content_unchecked="自动检查更新已关闭"
+        light:title="启动软件时自动检查更新" />
+    
+    <com.light.mobilesafe.ui.SettingItem
+        android:id="@+id/si_setting_show_address"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        light:content_checked="显示归属地"
+        light:content_unchecked="不显示归属地"
+        light:title="来电归属地显示" />
+    <com.light.mobilesafe.ui.SettingItem
+        android:id="@+id/si_callsafe_intercept"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        light:content_checked="拦截已开启"
+        light:content_unchecked="拦截已关闭"
+        light:title="骚扰拦截" />
+
+</LinearLayout>

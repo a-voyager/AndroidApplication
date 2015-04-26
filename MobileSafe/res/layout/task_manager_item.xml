@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginLeft="8dip"
+    android:layout_height="48dip" >
+
+    <TextView
+        android:id="@+id/tv_task_manager_app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/iv_task_manager_app"
+        android:text="未知应用"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_task_manager_mem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_task_manager_app_name"
+        android:layout_marginTop="28dip"
+        android:text="占用内存：00MB"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/iv_task_manager_app"
+        android:layout_width="36dip"
+        android:layout_height="36dip"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dip"
+        android:src="@android:drawable/sym_def_app_icon" />
+
+    <CheckBox
+        android:focusable="false"
+        android:clickable="false"
+        android:id="@+id/cb_task_manager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="25dp" />
+
+</RelativeLayout>

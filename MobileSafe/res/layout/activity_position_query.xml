@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context="com.light.mobilesafe.PositionQueryActivity" >
+
+    <TextView
+        style="@style/tv_act_title"
+        android:background="#03a9f4"
+        android:text="归属地查询" />
+
+    <EditText
+        android:id="@+id/et_position_query_num"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="10dip"
+        android:hint="请输入需要查询的电话号码"
+        android:inputType="phone" />
+
+    <TextView
+        android:id="@+id/tv_position_result"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:gravity="center"
+        android:text=""
+        android:textSize="24sp" />
+
+</LinearLayout>

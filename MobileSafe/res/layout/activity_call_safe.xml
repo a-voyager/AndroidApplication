@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.light.mobilesafe.CallSafeActivity" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            style="@style/tv_act_title"
+            android:layout_gravity="center_vertical"
+            android:background="#ff5722"
+            android:text="黑名单拦截" />
+
+        <ImageView
+            android:id="@+id/iv_callsafe_blacklist_new"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:clickable="true"
+            android:src="@drawable/action_new" />
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lv_call_safe_blacklist"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="5dip" >
+    </ListView>
+
+</LinearLayout>
