@@ -318,7 +318,7 @@ public class TaskManagerActivity extends Activity implements OnClickListener {
 
 		case R.id.btn_task_manager_setting:
 			Intent intent = new Intent(this, TaskManagerSettingActivity.class);
-			startActivity(intent);
+			startActivityForResult(intent, 0);
 			break;
 
 		default:
@@ -390,4 +390,10 @@ public class TaskManagerActivity extends Activity implements OnClickListener {
 		adapter.notifyDataSetChanged();
 	}
 
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		adapter.notifyDataSetChanged();
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+	
 }
