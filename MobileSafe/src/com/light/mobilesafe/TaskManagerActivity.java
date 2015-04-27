@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -50,6 +51,7 @@ public class TaskManagerActivity extends Activity implements OnClickListener {
 	private Button btn_task_manager_setting;
 	private Map<String, Long> memInfo;
 	private int thread;
+	private SharedPreferences sp;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +76,8 @@ public class TaskManagerActivity extends Activity implements OnClickListener {
 		btn_task_manager_select.setOnClickListener(this);
 		btn_task_manager_clean.setOnClickListener(this);
 		btn_task_manager_setting.setOnClickListener(this);
+
+		sp = getSharedPreferences("config", MODE_PRIVATE);
 
 		refreshView();
 	}
@@ -159,7 +163,8 @@ public class TaskManagerActivity extends Activity implements OnClickListener {
 													- usrtaskInfoList.size());
 										}
 
-										if (task.getPackName().equals(getPackageName())){
+										if (task.getPackName().equals(
+												getPackageName())) {
 											return;
 										}
 										ViewHolder holder = (ViewHolder) view
@@ -181,8 +186,6 @@ public class TaskManagerActivity extends Activity implements OnClickListener {
 						setMemInfo();
 
 					}
-
-					
 
 				});
 
@@ -207,7 +210,10 @@ public class TaskManagerActivity extends Activity implements OnClickListener {
 
 		@Override
 		public int getCount() {
-			return taskInfoList.size() + 2;
+			if (sp.getBoolean("showSys", true)) {
+				return taskInfoList.size() + 2;
+			}
+			return usrtaskInfoList.size() + 1;
 		}
 
 		@Override
@@ -274,8 +280,8 @@ public class TaskManagerActivity extends Activity implements OnClickListener {
 				holder.tv_mem.setText("占用内存："
 						+ android.text.format.Formatter.formatFileSize(
 								TaskManagerActivity.this, taskInfo.getMem()));
-			
-				holder.cb.setChecked(taskInfo.isChecked());
+
+			holder.cb.setChecked(taskInfo.isChecked());
 			return view;
 		}
 
@@ -311,7 +317,7 @@ public class TaskManagerActivity extends Activity implements OnClickListener {
 			break;
 
 		case R.id.btn_task_manager_setting:
-			Intent intent = new Intent(this,TaskManagerSettingActivity.class);
+			Intent intent = new Intent(this, TaskManagerSettingActivity.class);
 			startActivity(intent);
 			break;
 
@@ -322,18 +328,15 @@ public class TaskManagerActivity extends Activity implements OnClickListener {
 
 	private void setMemInfo() {
 		tv_task_manager_thread.setText("当前进程数：" + thread);
-		memInfo = SystemInfoUtils
-				.getMemInfo(TaskManagerActivity.this);
+		memInfo = SystemInfoUtils.getMemInfo(TaskManagerActivity.this);
 		tv_task_mem_avail.setText("可用/总内存："
 				+ android.text.format.Formatter.formatFileSize(
-						TaskManagerActivity.this,
-						memInfo.get("availMem"))
+						TaskManagerActivity.this, memInfo.get("availMem"))
 				+ "/"
 				+ android.text.format.Formatter.formatFileSize(
-						TaskManagerActivity.this,
-						memInfo.get("totalMem")));
+						TaskManagerActivity.this, memInfo.get("totalMem")));
 	}
-	
+
 	private void killChecked() {
 
 		ActivityManager activityManager = (ActivityManager) getSystemService(Activity.ACTIVITY_SERVICE);
@@ -357,14 +360,19 @@ public class TaskManagerActivity extends Activity implements OnClickListener {
 		thread -= count;
 		adapter.notifyDataSetChanged();
 		setMemInfo();
-		Toast.makeText(TaskManagerActivity.this,
-				"清理了" + count + "个进程,释放了" + Formatter.formatFileSize(TaskManagerActivity.this, mem) + "内存", 0).show();
+		Toast.makeText(
+				TaskManagerActivity.this,
+				"清理了"
+						+ count
+						+ "个进程,释放了"
+						+ Formatter.formatFileSize(TaskManagerActivity.this,
+								mem) + "内存", 0).show();
 
 	}
 
 	private void setAll(boolean checked) {
 		for (Task task : taskInfoList) {
-			if (task.getPackName().equals(getPackageName())){
+			if (task.getPackName().equals(getPackageName())) {
 				continue;
 			}
 			task.setChecked(checked);
@@ -374,7 +382,7 @@ public class TaskManagerActivity extends Activity implements OnClickListener {
 
 	private void setInvert() {
 		for (Task task : taskInfoList) {
-			if (task.getPackName().equals(getPackageName())){
+			if (task.getPackName().equals(getPackageName())) {
 				continue;
 			}
 			task.setChecked(!task.isChecked());

@@ -9,7 +9,22 @@
 
     <TextView
         style="@style/tv_act_title"
-        android:text="设置"
-        android:background="#8bc34a" />
+        android:background="#8bc34a"
+        android:text="设置" />
+
+    <CheckBox
+        android:id="@+id/cb_task_setting_showsys"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="3dip"
+        android:text="显示系统进程" />
+
+    <CheckBox
+        android:id="@+id/cb_task_setting_clean"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:text="定时清理" />
 
 </LinearLayout>
