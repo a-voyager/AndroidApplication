@@ -126,6 +126,9 @@
             android:name=".TaskManagerSettingActivity"
             android:label="@string/title_activity_task_manager_setting" >
         </activity>
+
+        <service android:name="com.light.mobilesafe.service.AutoCleanService" >
+        </service>
     </application>
 
 </manifest>

@@ -1,8 +1,10 @@
 package com.light.mobilesafe;
 
+import com.light.mobilesafe.service.AutoCleanService;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Build;
@@ -61,6 +63,13 @@ public class TaskManagerSettingActivity extends Activity implements
 		case R.id.cb_task_setting_clean:
 			editor.putBoolean("autoClean", isChecked);
 			System.out.println("putBoolean(autoClean, isChecked);"+isChecked);
+			Intent intent = new Intent(TaskManagerSettingActivity.this, AutoCleanService.class);
+			if(isChecked){
+				startService(intent);
+				System.out.println("¿ªÆô·þÎñ");
+			}else {
+				stopService(intent);
+			}
 			break;
 
 		case R.id.cb_task_setting_showsys:

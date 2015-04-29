@@ -43,6 +43,8 @@ import android.widget.Toast;
 
 import com.light.mobilesafe.MainActivity;
 import com.light.mobilesafe.R;
+import com.light.mobilesafe.TaskManagerSettingActivity;
+import com.light.mobilesafe.service.AutoCleanService;
 import com.light.mobilesafe.service.CallIntercept;
 import com.light.mobilesafe.service.ShowAddressService;
 import com.light.mobilesafe.utils.ServiceUtils;
@@ -169,6 +171,14 @@ public class SplashActivity extends Activity {
 			Editor editor = sharedPreferences.edit();
 			editor.putBoolean("firstOpen", false);
 			editor.commit();
+		}
+		
+		//判断是否锁屏自动清理进程
+		if(sharedPreferences.getBoolean("autoClean", false)){
+			if(!ServiceUtils.isServiceRunning(SplashActivity.this, "com.light.mobilesafe.service.AutoCleanService")){
+				System.out.println("锁屏自动清理服务未运行");
+				startService(new Intent(SplashActivity.this, AutoCleanService.class));
+			}
 		}
 	}
 
