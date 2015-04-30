@@ -36,5 +36,6 @@ public class BootBroadcastReciver extends BroadcastReceiver {
 				System.out.println("SIM¿¨Î´¸ü»»");
 			}
 		}
+		
 	}
 }

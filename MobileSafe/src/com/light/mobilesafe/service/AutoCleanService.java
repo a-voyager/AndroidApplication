@@ -38,7 +38,7 @@ public class AutoCleanService extends Service {
 		System.out.println("AutoCleanService£ºonCreate()");
 	}
 	
-	private class LockScreenReceiver extends BroadcastReceiver {
+	class LockScreenReceiver extends BroadcastReceiver {
 
 		@Override
 		public void onReceive(Context context, Intent intent) {

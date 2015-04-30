@@ -139,6 +139,15 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/widget_info" />
         </receiver>
+
+        <service android:name="com.light.mobilesafe.service.UpdateWidgetService" >
+        </service>
+
+        <receiver android:name="com.light.mobilesafe.service.CleanReceiver" >
+            <intent-filter>
+                <action android:name="com.light.mobilesafe.clean" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
