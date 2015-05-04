@@ -25,5 +25,6 @@
     <string name="title_activity_app_manager">AppManagerActivity</string>
     <string name="title_activity_task_manager">TaskManagerActivity</string>
     <string name="title_activity_task_manager_setting">TaskManagerSettingActivity</string>
+    <string name="title_activity_net_manager">NetManagerActivity</string>
 
 </resources>

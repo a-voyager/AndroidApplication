@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="statusbar_task_manager">#ff8bc34a</color>
     <color name="statusbar_app_manager">#ff259b24</color>
     <color name="statusbar_atools">#ffff4081</color>
     <color name="statusbar_act_main">#ffaa66cc</color>
     <color name="statusbar_call_safe">#ffff5722</color>
+    <color name="statusbar_net_manager">#ff03a9f4</color>
+    <color name="water_bg">#ff03a9f4</color>
+
 </resources>

@@ -127,10 +127,10 @@
             android:label="@string/title_activity_task_manager_setting" >
         </activity>
 
-        <service android:name="com.light.mobilesafe.service.AutoCleanService" >
+        <service android:name=".service.AutoCleanService" >
         </service>
 
-        <receiver android:name="com.light.mobilesafe.service.Widget" >
+        <receiver android:name=".service.Widget" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -140,14 +140,19 @@
                 android:resource="@xml/widget_info" />
         </receiver>
 
-        <service android:name="com.light.mobilesafe.service.UpdateWidgetService" >
+        <service android:name=".service.UpdateWidgetService" >
         </service>
 
-        <receiver android:name="com.light.mobilesafe.service.CleanReceiver" >
+        <receiver android:name=".service.CleanReceiver" >
             <intent-filter>
                 <action android:name="com.light.mobilesafe.clean" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".NetManagerActivity"
+            android:label="@string/title_activity_net_manager" >
+        </activity>
     </application>
 
 </manifest>

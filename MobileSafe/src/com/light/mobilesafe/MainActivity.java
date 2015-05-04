@@ -58,13 +58,13 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {  
-            setTranslucentStatus(true);  
-        }  
-  
-        SystemBarTintManager tintManager = new SystemBarTintManager(this);  
-        tintManager.setStatusBarTintEnabled(true);  
-        tintManager.setStatusBarTintResource(R.color.statusbar_act_main);
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+			setTranslucentStatus(true);
+		}
+
+		SystemBarTintManager tintManager = new SystemBarTintManager(this);
+		tintManager.setStatusBarTintEnabled(true);
+		tintManager.setStatusBarTintResource(R.color.statusbar_act_main);
 		sp = getSharedPreferences("config", MODE_PRIVATE);
 		GridView gridView_main = (GridView) findViewById(R.id.gv_main);
 		MyAdapter adapter = new MyAdapter();
@@ -91,13 +91,14 @@ public class MainActivity extends Activity {
 							AppManagerActivity.class));
 					break;
 
-				case 3: //进程管理
+				case 3: // 进程管理
 					startActivity(new Intent(MainActivity.this,
 							TaskManagerActivity.class));
 					break;
 
-				case 4:
-
+				case 4: // 流量统计
+					startActivity(new Intent(MainActivity.this,
+							NetManagerActivity.class));
 					break;
 
 				case 5:
@@ -127,19 +128,18 @@ public class MainActivity extends Activity {
 
 	}
 
-	private void setTranslucentStatus(boolean on) {  
-        Window win = getWindow();  
-        WindowManager.LayoutParams winParams = win.getAttributes();  
-        final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;  
-        if (on) {  
-            winParams.flags |= bits;  
-        } else {  
-            winParams.flags &= ~bits;  
-        }  
-        win.setAttributes(winParams);  
-    }  
+	private void setTranslucentStatus(boolean on) {
+		Window win = getWindow();
+		WindowManager.LayoutParams winParams = win.getAttributes();
+		final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+		if (on) {
+			winParams.flags |= bits;
+		} else {
+			winParams.flags &= ~bits;
+		}
+		win.setAttributes(winParams);
+	}
 
-	
 	/**
 	 * 执行进入点击手机防盗按钮的操作
 	 */
