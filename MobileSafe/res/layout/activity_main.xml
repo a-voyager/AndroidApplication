@@ -9,10 +9,26 @@
     android:orientation="vertical"
     tools:context="com.light.mobilesafe.MainActivity" >
 
-    <TextView
-        style="@style/tv_act_title"
-        android:background="#aa66cc"
-        android:text="@string/main_title" />
+    <com.light.mobilesafe.ui.RippleView
+        android:layout_width="match_parent"
+        android:layout_height="50dip" >
+
+        <TextView
+            style="@style/tv_act_title"
+            android:background="#ffaa66cc"
+            android:text="@string/main_title" />
+    </com.light.mobilesafe.ui.RippleView>
+
+    <com.light.mobilesafe.ui.RotateTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="15dp"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text=" 欢迎使用手机管家，在使用过程中遇到问题，记得及时反馈哦 ~                手机管家正在保护您的手机"
+        android:textSize="15sp" />
 
     <com.light.mobilesafe.ui.RippleView
         android:layout_width="match_parent"
@@ -26,7 +42,7 @@
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:horizontalSpacing="15dp"
             android:numColumns="3"
             android:verticalSpacing="15dp" >

@@ -108,13 +108,13 @@ public class WaterWaveView extends View {
 		flowPaint.setColor(mCircleColor);
 		flowPaint.setStyle(Paint.Style.FILL);
 		flowPaint.setAntiAlias(true);
-		flowPaint.setTextSize(36);
+		flowPaint.setTextSize(DensityUtil.dip2px(mContext, 32));
 
 		leftPaint = new Paint();
 		leftPaint.setColor(mCircleColor);
 		leftPaint.setStyle(Paint.Style.FILL);
 		leftPaint.setAntiAlias(true);
-		leftPaint.setTextSize(18);
+		leftPaint.setTextSize(DensityUtil.dip2px(mContext, 22));
 
 		mWavePaint = new Paint();
 		mWavePaint.setStrokeWidth(1.0F);
@@ -213,10 +213,10 @@ public class WaterWaveView extends View {
 				mScreenWidth * 5 / 8, mScreenHeight * 5 / 8, linePaint);
 		float num = flowPaint.measureText(flowNum);
 		canvas.drawText(flowNum, mScreenWidth * 4 / 8 - num / 2, mScreenHeight
-				* 4 / 8 + num / 4, flowPaint);
+				* 4 / 8 + num / 2, flowPaint);
 		float left = leftPaint.measureText(flowLeft);
 		canvas.drawText(flowLeft, mScreenWidth * 4 / 8 - left / 2,
-				mScreenHeight * 3 / 8, leftPaint);
+				mScreenHeight * 3 / 8 + num / 4, leftPaint);
 
 		// 如果未开始（未调用startWave方法）,绘制一个扇形
 		if ((!mStarted) || (mScreenWidth == 0) || (mScreenHeight == 0)) {
