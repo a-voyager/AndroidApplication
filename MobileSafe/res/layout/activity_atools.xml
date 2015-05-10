@@ -21,7 +21,6 @@
         android:background="@drawable/button"
         android:text="归属地查询"
         android:textSize="18sp" />
-
     <Button
         android:id="@+id/btn_atools_sms_backup"
         android:layout_width="fill_parent"
