@@ -46,7 +46,7 @@ public class NetManagerActivity extends Activity {
 		tv_net_manager_right = (TextView) findViewById(R.id.tv_net_manager_right);
 		waterWaveView = (WaterWaveView) findViewById(R.id.water_net_manager);
 
-
+  
 		tv_net_manager_right.setText("本月已用："
 				+ Formatter.formatFileSize(NetManagerActivity.this,
 						mobileRxBytes + mobileTxBytes));
