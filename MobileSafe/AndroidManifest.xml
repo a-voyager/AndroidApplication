@@ -153,6 +153,10 @@
             android:name=".NetManagerActivity"
             android:label="@string/title_activity_net_manager" >
         </activity>
+        <activity
+            android:name=".AntiVirusActivity"
+            android:label="@string/title_activity_anti_virus" >
+        </activity>
     </application>
 
 </manifest>

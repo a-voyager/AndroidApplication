@@ -101,8 +101,9 @@ public class MainActivity extends Activity {
 							NetManagerActivity.class));
 					break;
 
-				case 5:
-
+				case 5: // ÊÖ»úÉ±¶¾
+					startActivity(new Intent(MainActivity.this,
+							AntiVirusActivity.class));
 					break;
 
 				case 6:
