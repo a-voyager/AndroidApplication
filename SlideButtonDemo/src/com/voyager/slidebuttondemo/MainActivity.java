@@ -1,4 +1,6 @@
-package com.example.slidebuttondemo;
+package com.voyager.slidebuttondemo;
+
+import com.example.slidebuttondemo.R;
 
 import android.app.Activity;
 import android.os.Bundle;
