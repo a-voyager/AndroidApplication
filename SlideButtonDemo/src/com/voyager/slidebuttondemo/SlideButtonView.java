@@ -35,13 +35,13 @@ public class SlideButtonView extends View implements OnClickListener{
 	
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-		setMeasuredDimension(background.getWidth(), slider.getHeight());
+		setMeasuredDimension(background.getWidth(), background.getHeight());
 	}
 	
 	@Override
 	protected void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
-		canvas.drawBitmap(background, 0, 3, paint);
+		canvas.drawBitmap(background, 0, 0, paint);
 		canvas.drawBitmap(slider, slider_dis, 0, paint);
 	}
 
