@@ -19,6 +19,9 @@ public class SlideButtonView extends View implements OnClickListener {
 	private Paint paint;
 	private float slider_dis;
 	private boolean state = false;
+	private int x2;
+	private int x1;
+	private boolean isSliding;
 
 	public SlideButtonView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -50,6 +53,10 @@ public class SlideButtonView extends View implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
+		System.out.println("onClick: state="+state+" isSliding"+isSliding);
+		if (isSliding) {
+			return;
+		}
 		if (state) {
 			slider_dis = 0;
 		} else {
@@ -61,14 +68,45 @@ public class SlideButtonView extends View implements OnClickListener {
 
 	private void refreshView() {
 		slider_dis = slider_dis < 0 ? 0 : slider_dis;
-		slider_dis = slider_dis > background.getWidth() ? background.getWidth()
+		slider_dis = slider_dis > background.getWidth()-slider.getWidth() ? background.getWidth()-slider.getWidth()
 				: slider_dis;
 		invalidate();
 	}
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		return super.onTouchEvent(event);
+		super.onTouchEvent(event);
+		float dis = 0;
+		switch (event.getAction()) {
+		case MotionEvent.ACTION_DOWN:
+			x1 = x2 = (int) event.getX();
+			break;
+		case MotionEvent.ACTION_MOVE:
+			dis = event.getX() - x1;
+			System.out.println("dis="+Math.abs(dis));
+			if (Math.abs(dis) > 20) {
+				isSliding = true;
+			}
+			x2 = (int) event.getX();
+			slider_dis += dis;
+			break;
+		case MotionEvent.ACTION_UP:
+			if (isSliding) {
+				int max = background.getWidth() - slider.getWidth();
+				if (slider_dis > max / 2) {
+					state = true;
+					slider_dis = max;
+				} else {
+					state = false;
+					slider_dis = 0;
+				}
+				refreshView();
+			}
+			break;
+
+		}
+		refreshView();
+		return true;
 	}
-	
+
 }
