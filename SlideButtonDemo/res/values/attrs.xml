@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ 
+    <declare-styleable name="SlideButton">
+        <attr name="background" format="reference" />
+        <attr name="slider" format="reference" />
+        <attr name="state" format="boolean" />
+    </declare-styleable>
+
+</resources>
